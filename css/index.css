@@ -87,7 +87,7 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  font-family: 'EB Garamond', serif;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -125,6 +125,11 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+html,
+body {
+  font-family: 'EB Garamond', serif;
+  color: #020403;
 }
 /* Set every element's box-sizing to border-box */
 * {
@@ -216,7 +221,6 @@ table {
   padding-top: 25px;
   padding-left: 25px;
   background-color: lightgray;
-  border-color: 2px solid orange;
 }
 .container .skills .skill-hist {
   width: 420px;
