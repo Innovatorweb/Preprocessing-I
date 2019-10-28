@@ -130,11 +130,11 @@ table {
 * {
   box-sizing: border-box;
 }
-.flexbox-space-between-mixin {
+.flexbet {
   justify-content: space-between;
   display: flex;
 }
-.flexbox-row {
+.flex-box-row {
   display: flex;
   flex-direction: row;
 }
@@ -153,6 +153,7 @@ table {
 }
 .container h2 {
   font-weight: bold;
+  font-size: 22px;
 }
 .container .navigation {
   display: flex;
@@ -163,7 +164,7 @@ table {
   align-items: center;
   justify-content: space-between;
   display: flex;
-  padding: 0 0 0 0;
+  padding: 0 0 15px 0;
 }
 .container .navigation a {
   text-decoration: none;
@@ -172,16 +173,17 @@ table {
 }
 .container .cta {
   display: flex;
-  align-items: flex-start;
+  justify-content: space-around;
+  background-color: lightgray;
   /* Button */
   /* Image */
 }
 .container .cta .cta-text {
+  padding: 25px 0 0 0;
   width: 50%;
   font-size: 80px;
   vertical-align: top;
   text-align: center;
-  padding: 0px 60px;
 }
 .container .cta .cta-text button {
   background: white;
@@ -195,14 +197,13 @@ table {
   background: black;
   color: white;
 }
-.container .cta .bio {
+.container .cta .bio-img {
   Height: 50%;
   Width: 50%;
+  border-radius: 8px;
 }
 .container .intro {
   border-top: 1px solid black;
-  display: flex;
-  flex-direction: row;
 }
 .container .intro .text-container {
   padding-top: 20px;
@@ -210,9 +211,12 @@ table {
 }
 .container .skills {
   display: flex;
-  justify-content: space-evenly;
-  padding-bottom: 25px;
-  padding-top: 40px;
+  align-items: center;
+  justify-content: center;
+  padding-top: 25px;
+  padding-left: 25px;
+  background-color: lightgray;
+  border-color: 2px solid orange;
 }
 .container .skills .skill-hist {
   width: 420px;
@@ -222,9 +226,10 @@ table {
   list-style-type: square;
   line-height: 1.5;
 }
-.container .code-screen {
+.container .skills .code-screen {
   width: 80%;
-  Height: 80%;
+  height: auto;
+  border-radius: 8px;
 }
 .container .history {
   justify-content: space-between;
@@ -235,9 +240,14 @@ table {
   line-height: 20px;
   padding-bottom: 60px;
 }
+.container .history .years,
+.container .history .company {
+  background-color: lightgray;
+}
 .container .contact {
   padding: 25px 0px 0px 0px;
   border-top: 1px solid black;
+  background-color: lightgray;
 }
 .container footer {
   text-align: center;
@@ -246,32 +256,38 @@ table {
 /* Mobile ******************************/
 @media (max-width: 500px) {
   .container {
-    width: 500px;
+    width: 480px;
     padding: 0 0 0 0;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 22px;
   }
   /* Image **********************/
   .navigation nav {
-    width: 500px;
-    margin: 25px;
     display: flex;
     flex-direction: column;
     align-items: left;
-    padding: 0 0 0 0;
   }
   .navigation a {
-    width: 500px;
+    width: 50%;
     border: 1px solid black;
     font-size: 22px;
     padding: 15px 60% 0px 40%;
   }
   .cta {
     margin: 0px 0 20px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
-  .cta .bio {
-    display: none;
+  .cta .bio-img {
+    height: 20%;
+    Width: 20%;
+    border-radius: 8px;
   }
   .cta .cta-text {
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     text-align: center;
     font-size: 75px;
