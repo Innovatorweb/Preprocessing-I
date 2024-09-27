@@ -21,7 +21,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	font-family: 'EB Garamond', serif;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -48,12 +48,254 @@ table {
 	border-spacing: 0;
 }
 
+html, body {
+	font-family: 'EB Garamond', serif;
+	color: @font-color;
+  }
+
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+///////////// Variables
+@variable-nav-color: rgb(94, 94, 94);
+@bgcolor: lightgray;
+@font-color: #020403;
+
+
+////////////// Mixins
+.flexbet {
+	justify-content: space-between;
+	display: flex;
+}
+.flex-box-row {
+	display: flex;
+	flex-direction: row;
 }
 
+.h2-fonts (@bold, @size){
+	font-weight: @bold;
+	font-size: @size;
+}
+
+
+//////////////// Container
+.container {
+    width: 878px;
+	margin: 0 auto;
+	/* border: 1px solid red; */	
+	@media (max-width: 878px){
+		width: 100%;
+	}
+
+h2 {
+	.h2-fonts(bold, 22px)
+	
+}
+
+.navigation {
+	display: flex;
+	nav {
+		margin-top: 40px;
+		width: 878px;
+		align-items: center;
+		.flexbet();
+		padding: 0 0 15px 0;
+	}
+	a{
+		text-decoration: none;
+		margin: 0 60px;
+		font-color: @variable-nav-color;
+	}
+}
+
+.cta{
+	display: flex;
+	justify-content: space-around;
+	background-color: @bgcolor;
+	.cta-text {
+		padding: 25px 0 0 0;
+		width: 50%;
+		font-size: 80px;
+		vertical-align: top;
+		text-align: center;
+	}
+	/* Button */
+	.cta-text button{
+		background: white;
+		vertical-align: top;
+		margin-top: 5px;
+		padding: 10px 50px;
+		font-size: 18px;
+		border: 1px solid black;
+	}
+	button:hover {
+		background: black;
+		color: white;
+	}
+	/* Image */
+	.bio-img {
+		Height: 50%;
+		Width: 50%;	
+		border-radius: 8px;	
+	}
+}
+
+/* Top Text */
+.intro {
+	border-top: 1px solid black;
+	// @flexbox-row;
+	.text-container{
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+}
+
+// Skills
+
+.skills {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	padding-top: 25px;
+	padding-left: 25px;
+	// padding: 900px, 900px, 800px, 25px;
+	background-color: @bgcolor;
+	// border-color: 2px solid orange;
+	.skill-hist {
+		width: 420px;
+	}
+	ul {
+		padding: 25px;
+		list-style-type: square;
+		line-height: 1.5;
+	}
+	.code-screen {
+		width: 80%;
+		height: auto;
+		border-radius: 8px;
+	}
+}
+// Bottom Image
+
+/* Bottom Text */
+.history {
+	justify-content: space-between;
+	.flex-box-row();
+		width: 100%;
+		padding-top: 20px;
+		line-height: 20px;
+		padding-bottom: 60px;
+	.years, .company{
+		background-color: @bgcolor;
+	}
+	
+	}
+
+
+/* Contact and Footer */
+.contact {
+	padding: 25px 0px 0px 0px;
+	border-top: 1px solid black;
+	background-color: @bgcolor;
+}
+
+footer {
+	text-align: center;
+	padding: 35px 0px;}
+}
+
+
+/* Mobile ******************************/
+@media(max-width: 500px) {
+    .container {
+		width: 480px;
+		padding: 0 0 0 0;
+	}
+	h2 {
+		.h2-fonts(bold, 22px)
+		
+	}
+/* Image **********************/
+
+	.navigation {
+		nav{
+			// width: 50%;
+			display: flex;
+			flex-direction: column;
+			align-items: left;
+			// padding: 0 0 0 0;
+		}
+		a {
+			width: 50%;
+			border: 1px solid black;
+			font-size: 22px;
+			padding: 15px 60% 0px 40%;
+		}
+	}
+
+	.cta {
+		margin: 0px 0 20px 0;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		.bio-img {
+		height: 20%;
+		Width: 20%;	
+		border-radius: 8px;
+		}
+		.cta-text {
+			// align-items: flex-start;
+			align-items: center;
+			width: 100%;
+			text-align: center;
+			font-size: 75px;
+		}
+	}
+/* Main Body ******************/
+.main-body {
+	padding: 0 0 0 0;		
+	.intro {
+		border-top: 1px solid black;
+		.text-container {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 35px;
+			width: 100%;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			}
+}
+	.history {
+		font-size: 13px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-left: 0px;
+		padding-top: 0px;
+		width: 100%;		
+	}
+/* image *********************/
+	.middle-img {
+		width: 100%;
+	}    
+
+.contact {
+	width: 100%;
+	margin-left: 0px;
+}
+
+.footer {
+	width: 100%;
+	padding-bottom: 6px;
+}
+// Image
+.code-screen {
+	display: none;
+	}
+// End Main Body
+}
+// End Mobile Container
+}
